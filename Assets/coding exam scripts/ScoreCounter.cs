@@ -19,7 +19,7 @@ public class ScoreCounter : MonoBehaviour
     public void IncreaseScore(int i)
     {
         score += 1;
-        scoreText.text = "Score: " + score + "\n" + ScoreMessages[score];
+        scoreText.text = "Score: " + score + "\n" + ScoreMessages[score-1];
       
     }
 
