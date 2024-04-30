@@ -1190,7 +1190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Score: 0'
+  m_Text: 
 --- !u!222 &312436465
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7059,8 +7059,8 @@ MonoBehaviour:
   - Uno
   - Dose
   - Tres
-  - Quatro
-  - Sinco
+  - Cuatro
+  - Cinco
 --- !u!1 &1706484343
 GameObject:
   m_ObjectHideFlags: 0

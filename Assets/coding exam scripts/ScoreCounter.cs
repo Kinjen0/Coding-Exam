@@ -13,7 +13,6 @@ public class ScoreCounter : MonoBehaviour
     public void Start()
     {
         //scoreText = GetComponent<Text>();  
-        scoreText.text = "working";
        
     }
     public void IncreaseScore(int i)
