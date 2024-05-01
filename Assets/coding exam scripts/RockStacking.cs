@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Copy of the origional rock stacking script so that I can still use it. 
+// Copy of the origional rock stacking script for the purpose of staching a set ammount of cubes 
 public class RockStacking : MonoBehaviour
 {
     /*
@@ -44,7 +44,7 @@ public class RockStacking : MonoBehaviour
         snap2T = snap2.transform;
         snap3T = snap3.transform;
         */
-
+        // For every transform child of the rockbase, we will add it to the list
         foreach (Transform child in rockbase)
         {
 
@@ -61,7 +61,7 @@ public class RockStacking : MonoBehaviour
         if (other.gameObject.tag == "Rock" && other.gameObject.GetComponent<Rock>().isPlaced == false)
         {
             GameObject rock = other.gameObject;
-            // If the count of rocks is less than 3, we can start the other checks
+            // If the count of rocks is less than 4, we can then check if it is the right rock/square to be placed
             if (rockCount < 4)
             {
                 // Check to make sure that the right cube is being places. 
@@ -84,13 +84,14 @@ public class RockStacking : MonoBehaviour
                     // Now set the rock to kinnematic to stop its interactions. 
                     rock.GetComponent<Rigidbody>().isKinematic = true;
                     rockPlaceSound.Play();
-                    // And make it so we can no longer pick it up.
+                    // Set the state of the quests for stacking to be completed
                     gameManagerScript.quests[0] = true;
                 }
 
             }
             else
             {
+                // All of the rocks have been stacked so now
                 // We need it to tumble
                 rocktumble();
             }
@@ -99,9 +100,9 @@ public class RockStacking : MonoBehaviour
 
     }
 
+    // Function to let the rocks fall over if we try to add too many rocks. 
     private void rocktumble()
     {
-        // otherwise it needs to tumble. 
         for (int i = 0; i < cubes.Length; i++)
         {
             // Allow physics to apply again

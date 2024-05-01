@@ -34,6 +34,7 @@ public class ThrowableSphere : MonoBehaviour
         // If it has been grabbed, AND isnt currently being grabbed, we can start the vanish routine
         if(hasBeenGrabbed && !grabPoint.isGrabbed)
         {
+            // Only call this once, if it hasnt already been counted
             if (!hasBeenCounted)
             {
                 hasBeenCounted=true;
